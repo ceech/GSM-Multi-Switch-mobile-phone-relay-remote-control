@@ -4,6 +4,7 @@
 #define TIMEOUT    5000
 const int relay1 = 7;
 const int relay2 = 10;
+const int powerkey = 6;
 bool relay1status; 
 bool relay2status;
 
@@ -13,8 +14,12 @@ void setup()
 {
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
+  pinMode(powerkey, OUTPUT);
   digitalWrite(relay1, LOW);
   digitalWrite(relay2, LOW);
+  digitalWrite(powerkey, HIGH);
+  delay(1250);
+  digitalWrite(powerkey, LOW);
   
   Serial.begin(19200);
   
