@@ -258,7 +258,7 @@ String Sim800l::readSms(uint8_t index){
 
 
 bool Sim800l::delAllSms(){ 
-  SIM.print(F("AT+CMGD=1,3\r"));
+  SIM.print(F("AT+CMGD=1,4\r"));
   _buffer=_readSerial();
   if (_buffer.indexOf("OK")!=-1) {return true;}else {return false;}
 }
